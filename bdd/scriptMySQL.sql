@@ -23,6 +23,7 @@ CREATE TABLE Person(
   birthDate date,
   lastConnection timestamp,
   phoneNumber varchar(255),
+  passWord varchar(255),
   PRIMARY KEY (idPerson)
 );
 
@@ -70,6 +71,7 @@ CREATE TABLE Course(
   description varchar(255),
   name varchar(255),
   ects int,
+  lastCommentary varchar(255),
   PRIMARY KEY (idCourse),
   FOREIGN KEY (idStudent) REFERENCES Student(idStudent)
 );
