@@ -16,6 +16,19 @@ suivre les instructions  d'installation de lamp:
   /etc/apache2/apache2.conf
   ligne170 : <Directory /var/www/> -> par le path de notre dossier
   
+Ne pas oublier de modifier le fichier db.php avant d'utiliser l'api !!
+
+Pour tester ses informations modifier le fichier index.php et l'executer dans un navigateur web : si la connection est réussite le message suivant devrait apparaitre : 
+      {"success":true,"message":"Connection réussie"}
+     
+Problème possible : 
+  aucun utilisatuer de connu sur mysql :
+    Pour créer un nouvel utilisateur(login = non-root, et mdp = 123) :
+    
+    mysql
+    CREATE USER 'non-root'@'localhost' IDENTIFIED BY '123';
+    GRANT ALL PRIVILEGES ON * . * TO 'non-root'@'localhost';
+    FLUSH PRIVILEGES;
   
 exemple URI:
 
