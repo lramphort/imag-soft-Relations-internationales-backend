@@ -1,5 +1,5 @@
 <?php
-header('Content-Type: application/json');
+header('Access-Control-Allow-Origin: *');
 $success = false;
 $data = array();
 include('db.php');

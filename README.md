@@ -37,3 +37,8 @@ http://[server_ip]/student/get_student.php
 
 get student id = 1 :
 http://[server_ip]/student/get_student.php?idStudent=1
+
+Reminder pour MySQL :
+-> mysql --user=root --password localDataBase
+Se mettre dans le dossier bdd du projet
+-> source ./monScript.sql

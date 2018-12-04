@@ -85,22 +85,13 @@ CREATE TABLE Mark(
   FOREIGN KEY (idCourse) REFERENCES Course(idCourse)
 );
 
-CREATE TABLE Teacher(
-  idTeacher varchar(255) NOT NULL,
-  idCourse varchar(255) NOT NULL,
-  lastName varchar(255),
-  firstName varchar(255),
-  PRIMARY KEY (idTeacher),
-  FOREIGN KEY (idCourse) REFERENCES Course(idCourse)
-);
-
 CREATE TABLE Poll(
   idPoll varchar(255) NOT NULL,
   idCourse varchar(255) NOT NULL,
   status varchar(255),
   question varchar(255),
   answer varchar(255),
-  dateAnswer date,
+  dateAnswer timestamp,
   PRIMARY KEY (idPoll),
   FOREIGN KEY (idCourse) REFERENCES Course(idCourse)
 );
