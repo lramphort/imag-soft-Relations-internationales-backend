@@ -1,9 +1,9 @@
 <?php
 include('../template.php');
-if( !empty($_GET['idAdministrator']) ){
+if( !empty($_GET['idPerson']) ){
 	//Si le client a saisi une ville de depart, on filtre les données via MySQL
-	$requete = $pdo->prepare("SELECT * FROM `Administrator` WHERE `idAdministrator` LIKE :idAdministrator");
-	$requete->bindParam(':idAdministrator', $_GET['idAdministrator']);
+	$requete = $pdo->prepare("SELECT * FROM `Administrator` WHERE `idPerson` LIKE :idPerson");
+	$requete->bindParam(':idPerson', $_GET['idPerson']);
 } else {
 	//Sinon on affiche tous les vols
 	$requete = $pdo->prepare("SELECT * FROM `Administrator`");

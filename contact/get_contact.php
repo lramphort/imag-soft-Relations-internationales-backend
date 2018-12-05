@@ -1,10 +1,12 @@
 <?php
 include('../template.php');
-if( !empty($_GET['idContact']) && !empty($_GET['idStudent']) ){
+if( !empty($_GET['idContact']) ){
 	//Si le client a saisi une ville de depart, on filtre les données via MySQL
-	$requete = $pdo->prepare("SELECT * FROM `Contact` WHERE `idContact` LIKE :idContact AND `idStudent` LIKE :idStudent");
+	$requete = $pdo->prepare("SELECT * FROM `Contact` WHERE `idContact` LIKE :idContact");
 	$requete->bindParam(':idContact', $_GET['idContact']);
-	$requete->bindParam(':idStudent', $_GET['idStudent']);
+} elseif( !empty($_GET['idPerson']) ) {
+	$requete = $pdo->prepare("SELECT * FROM `Contact` WHERE `idPerson` LIKE :idPerson");
+	$requete->bindParam(':idPerson', $_GET['idPerson']);
 } else {
 	//Sinon on affiche tous les vols
 	$requete = $pdo->prepare("SELECT * FROM `Contact`");
