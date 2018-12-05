@@ -106,6 +106,7 @@ CREATE TABLE Mark(
 CREATE TABLE Poll(
   idPoll varchar(255) NOT NULL,
   idCourse varchar(255) NOT NULL,
+  idPerson varchar(255) NOT NULL,
   status varchar(255),
   question varchar(255),
   answer varchar(255),

@@ -52,10 +52,10 @@ Insert into Mark values ('7', '3', '3','Partiel', 15);
 Insert into Mark values ('8', '3', '3','CC', 3);
 Insert into Mark values ('9', '3', '3','QCM', 12.5);
 
-Insert into Poll values ('1', '1','Sent', 'Which color do you prefer ?', null, null);
-Insert into Poll values ('2', '2','Answered', 'Are you intagrated ?', 'Pretty well', '2017/11/07 01:00:00');
-Insert into Poll values ('3', '3','Sent', 'Do you need help for this chapter ?', null, null);
-Insert into Poll values ('4', '3','Answered', 'Have you forgotten your headset ?', 'No', '2018/05/28 01:00:00');
+Insert into Poll values ('1', '1', '1', 'Sent', 'Which color do you prefer ?', null, null);
+Insert into Poll values ('2', '2', '2','Answered', 'Are you intagrated ?', 'Pretty well', '2017/11/07 01:00:00');
+Insert into Poll values ('3', '3', '2','Sent', 'Do you need help for this chapter ?', null, null);
+Insert into Poll values ('4', '3', '2','Answered', 'Have you forgotten your headset ?', 'No', '2018/05/28 01:00:00');
 
 Insert into PossibleAnswer values ('1', '1','Blue');
 Insert into PossibleAnswer values ('2', '1','Red');
