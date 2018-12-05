@@ -35,6 +35,7 @@ CREATE TABLE Student(
   birthDate date,
   lastConnection timestamp,
   phoneNumber varchar(255),
+  login varchar(255),
   passWord varchar(255),
   university varchar(255),
   isArchived boolean,
@@ -63,6 +64,7 @@ CREATE TABLE Administrator(
   birthDate date,
   lastConnection timestamp,
   phoneNumber varchar(255),
+  login varchar(255),
   passWord varchar(255),
   PRIMARY KEY (idPerson)
 );
@@ -84,6 +86,8 @@ CREATE TABLE Course(
   name varchar(255),
   ects int,
   lastCommentary varchar(255),
+  teacherFullName varchar(255),
+  teacherEmail varchar(255),
   PRIMARY KEY (idCourse),
   FOREIGN KEY (idPerson) REFERENCES Student(idPerson)
 );
