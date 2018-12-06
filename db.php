@@ -3,7 +3,7 @@
 $hote = 'localhost';
 $port = "8080";
 $nom_bdd = 'localDataBase';
-$utilisateur = 'root';
+$utilisateur = 'thomas';
 $mot_de_passe ='root';
 try {
 	//On test la connexion à la base de donnée
