@@ -16,18 +16,18 @@ if( !empty($_GET['idPerson'])
     //$requete = $pdo->prepare("INSERT INTO `Student`(`idStudent` , `university` , `isarchived` , `isEntrant`) values (1,'UGA',false,false);");
 
     $requete = $pdo->prepare("INSERT INTO `Student`(`idPerson` , `firstName` , `lastName` , `emailAddress` , `birthDate` , `lastConnection` , `phoneNumber` , `university` , `isArchived` , `isEntrant` , `login` , `passWord`) values (:idPerson , :firstName , :lastName, :emailAddress, :birthDate , :lastConnection , :phoneNumber , :university , :isArchived , :isEntrant , :loginStudent , :passWordStudent);");
-    $requete->bindParam(':idPerson', $_GET['idPerson']);
-	$requete->bindParam(':firstName', $_GET['firstName']);
-	$requete->bindParam(':lastName', $_GET['lastName']);
-	$requete->bindParam(':emailAddress', $_GET['emailAddress']);
-	$requete->bindParam(':birthDate', $_GET['birthDate']);
-	$requete->bindParam(':lastConnection', $_GET['lastConnection']);
-	$requete->bindParam(':phoneNumber', $_GET['phoneNumber']);
-	$requete->bindParam(':university', $_GET['university']);
+    $requete->bindParam(':idPerson', "'" + $_GET['idPerson'] + "'");
+	$requete->bindParam(':firstName', "'" + $_GET['firstName'] + "'");
+	$requete->bindParam(':lastName', "'" + $_GET['lastName'] + "'");
+	$requete->bindParam(':emailAddress', "'" + $_GET['emailAddress'] + "'");
+	$requete->bindParam(':birthDate', "'" + $_GET['birthDate'] + "'");
+	$requete->bindParam(':lastConnection', "'" + $_GET['lastConnection'] + "'");
+	$requete->bindParam(':phoneNumber', "'" + $_GET['phoneNumber'] + "'");
+	$requete->bindParam(':university', "'" + $_GET['university'] + "'");
 	$requete->bindParam(':isEntrant', $_GET['isEntrant']);
 	$requete->bindParam(':isArchived', $_GET['isArchived']);
-	$requete->bindParam(':loginStudent', $_GET['login']);
-	$requete->bindParam(':passWordStudent', $_GET['passWord']);
+	$requete->bindParam(':loginStudent', "'" + $_GET['login'] + "'");
+	$requete->bindParam(':passWordStudent', "'" + $_GET['passWord'] + "'");
 	if( $requete->execute() ){
 		$success = true;
 		$msg = 'Un(e) étudiant(e) a bien été ajouté(e)';
