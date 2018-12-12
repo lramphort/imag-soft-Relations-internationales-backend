@@ -35,8 +35,8 @@ CREATE TABLE Student(
   birthDate date,
   lastConnection timestamp,
   phoneNumber varchar(255),
-  login varchar(255),
-  passWord varchar(255),
+  login TEXT(255),
+  passWord TEXT(255),
   university varchar(255),
   isArchived boolean,
   isEntrant boolean,
@@ -111,6 +111,7 @@ CREATE TABLE Poll(
   question varchar(255),
   answer varchar(255),
   dateAnswer timestamp,
+  etat boolean,
   PRIMARY KEY (idPoll),
   FOREIGN KEY (idCourse) REFERENCES Course(idCourse)
 );
