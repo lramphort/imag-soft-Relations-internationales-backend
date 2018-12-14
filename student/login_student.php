@@ -8,11 +8,9 @@
 		if( $requete->execute() ){
 			$resultats = $requete->fetchAll();
 
-			// $today = new DateTime();
-			// $requeteUpdateLastConnection = $pdo->prepare("UPDATE `Student` SET `lastConnection` = :newTimestamp WHERE `idPerson` = :idPerson");
-			// $requeteUpdateLastConnection->bindParam(':newTimestamp', $today->getTimestamp());
-			// $rerequeteUpdateLastConnectionquete2->bindParam(':idPerson', $resultats[0]['idPerson']);
-			// $requeteUpdateLastConnection->execute();
+			 $requeteUpdateLastConnection = $pdo->prepare("UPDATE `Student` SET `lastConnection` = NOW() WHERE `idPerson` = :idPerson");
+			 $requeteUpdateLastConnection->bindParam(':idPerson', $resultats[0]['idPerson']);
+			 $requeteUpdateLastConnection->execute();
 			
 			$success = true;
 			$data['result'] = $resultats[0]['idPerson'];

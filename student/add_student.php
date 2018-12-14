@@ -1,5 +1,7 @@
 <?php
 include('../template.php');
+include('../genPW.php');
+
 if( !empty($_GET['idPerson']) 
 && !empty($_GET['firstName']) 
 && !empty($_GET['lastName']) 
@@ -12,8 +14,13 @@ if( !empty($_GET['idPerson'])
 && !empty($_GET['isArchived'])
 && !empty($_GET['login'])
 && !empty($_GET['passWord']) ){
+
+
+
+	$password = crypt($_GET['passWord'], '$5$rounds=5000$usesomesillystringforsalt$' );
+
+
 	//Si toutes les données sont saisie par le client
-    //$requete = $pdo->prepare("INSERT INTO `Student`(`idStudent` , `university` , `isarchived` , `isEntrant`) values (1,'UGA',false,false);");
 
     $requete = $pdo->prepare("INSERT INTO `Student`(`idPerson` , `firstName` , `lastName` , `emailAddress` , `birthDate` , `lastConnection` , `phoneNumber` , `university` , `isArchived` , `isEntrant` , `login` , `passWord`) values (:idPerson , :firstName , :lastName, :emailAddress, :birthDate , :lastConnection , :phoneNumber , :university , :isArchived , :isEntrant , :loginStudent , :passWordStudent);");
     $requete->bindParam(':idPerson', "'" + $_GET['idPerson'] + "'");
@@ -38,4 +45,5 @@ if( !empty($_GET['idPerson'])
     $success = false;
 	$msg = "Il manque des informations...";
 }
+
 reponse_json([$success, $data, $msg]);

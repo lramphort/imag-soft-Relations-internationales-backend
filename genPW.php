@@ -12,3 +12,7 @@
         }
         return $generation;
     }
+    $password = chaine_aleatoire (5);
+    
+   
+    
