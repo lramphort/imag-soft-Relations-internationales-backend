@@ -11,7 +11,7 @@ if( !empty($_GET['firstName'])
 && !empty($_GET['university']) 
 && !empty($_GET['isEntrant']) 
 && !empty($_GET['login'])
-&& !empty($_GET['passWord']) 
+//&& !empty($_GET['passWord']) 
 ){
 	
 	echo $_GET['firstName']. " ";
@@ -28,7 +28,7 @@ if( !empty($_GET['firstName'])
 
 	
 
-    $requete = $pdo->prepare("INSERT INTO `Student`( `firstName` , `lastName` , `emailAddress` , `birthDate` , `lastConnection` , `phoneNumber` , `university` , `isArchived` , `isEntrant` , `login` , `passWord`) values ( :firstName , :lastName, :emailAddress, :birthDate , null , :phoneNumber , :university , 0 , :isEntrant , :login , :passWord);");
+    $requete = $pdo->prepare("INSERT INTO `Student` ( `firstName` , `lastName` , `emailAddress` , `birthDate` , `lastConnection` , `phoneNumber` , `university` , `isArchived` , `isEntrant` , `login` , `passWord`) values ( :firstName , :lastName, :emailAddress, :birthDate , null , :phoneNumber , :university , 0 , :isEntrant , :login , $password);");
 	$requete->bindParam(':firstName',  $_GET['firstName'] );
 	$requete->bindParam(':lastName', $_GET['lastName'] );
 	$requete->bindParam(':emailAddress', $_GET['emailAddress'] );
@@ -37,7 +37,8 @@ if( !empty($_GET['firstName'])
 	$requete->bindParam(':university', $_GET['university'] );
 	$requete->bindParam(':isEntrant', $_GET['isEntrant']);
 	$requete->bindParam(':login', $_GET['login'] );
-	$requete->bindParam(':passWord', $password );
+	//$requete->bindParam(':passWord', $password );
+	
 	if( $requete->execute() ){
 		$success = true;
 		$msg = 'Un(e) étudiant(e) a bien été ajouté(e)';
@@ -45,7 +46,6 @@ if( !empty($_GET['firstName'])
 		$msg = "Une erreur s'est produite...";
 	}
 } else {
-	echo "suce mon gland";
     $success = false;
 	$msg = "Il manque des informations...";
 }
