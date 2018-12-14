@@ -28,7 +28,7 @@ DROP TABLE IF EXISTS Person;
 );*/
 
 CREATE TABLE Student(
-  idPerson varchar(255) NOT NULL,
+  idPerson int NOT NULL AUTO_INCREMENT,
   emailAddress varchar(255),
   firstName varchar(255),
   lastName varchar(255),
@@ -44,8 +44,8 @@ CREATE TABLE Student(
 );
 
 CREATE TABLE Contact(
-  idContact varchar(255) NOT NULL,
-  idPerson varchar(255),
+  idContact int NOT NULL AUTO_INCREMENT,
+  idPerson int,
   emailAddress varchar(255),
   firstName varchar(255),
   lastName varchar(255),
@@ -57,7 +57,7 @@ CREATE TABLE Contact(
 );
 
 CREATE TABLE Administrator(
-  idPerson varchar(255) NOT NULL,
+  idPerson int NOT NULL AUTO_INCREMENT,
   emailAddress varchar(255),
   firstName varchar(255),
   lastName varchar(255),
@@ -70,8 +70,8 @@ CREATE TABLE Administrator(
 );
 
 CREATE TABLE DailyTopic(
-  idDailyTopic varchar(255) NOT NULL,
-  idPerson varchar(255),
+  idDailyTopic int NOT NULL AUTO_INCREMENT,
+  idPerson int,
   dateDailyTopic date,
   description varchar(255),
   name varchar(255),
@@ -80,8 +80,8 @@ CREATE TABLE DailyTopic(
 );
 
 CREATE TABLE Course(
-  idCourse varchar(255) NOT NULL,
-  idPerson varchar(255),
+  idCourse int NOT NULL AUTO_INCREMENT,
+  idPerson int,
   description varchar(255),
   name varchar(255),
   ects int,
@@ -93,9 +93,9 @@ CREATE TABLE Course(
 );
 
 CREATE TABLE Mark(
-  idMark varchar(255) NOT NULL,
-  idCourse varchar(255) NOT NULL,
-  idPerson varchar(255) NOT NULL,
+  idMark int NOT NULL AUTO_INCREMENT,
+  idCourse int NOT NULL,
+  idPerson int NOT NULL,
   typeMark varchar(255),
   valueMark float,
   PRIMARY KEY (idMark),
@@ -104,9 +104,9 @@ CREATE TABLE Mark(
 );
 
 CREATE TABLE Poll(
-  idPoll varchar(255) NOT NULL,
-  idCourse varchar(255) NOT NULL,
-  idPerson varchar(255) NOT NULL,
+  idPoll int NOT NULL AUTO_INCREMENT,
+  idCourse int NOT NULL,
+  idPerson int NOT NULL,
   status varchar(255),
   question varchar(255),
   answer varchar(255),
@@ -117,8 +117,8 @@ CREATE TABLE Poll(
 );
 
 CREATE TABLE PossibleAnswer(
-  idPossibleAnswer varchar(255) NOT NULL,
-  idPoll varchar(255) NOT NULL,
+  idPossibleAnswer int NOT NULL AUTO_INCREMENT,
+  idPoll int NOT NULL,
   valuePossibleAnswer varchar(255),
   PRIMARY KEY (idPossibleAnswer),
   FOREIGN KEY (idPoll) REFERENCES Poll(idPoll)
