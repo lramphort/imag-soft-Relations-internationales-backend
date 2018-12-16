@@ -5,9 +5,6 @@ if(!empty($_GET['idCourse'])
 && !empty($_GET['idPerson'])  
 && !empty($_GET['question']) 
  ){
-
-	//Si toutes les données sont saisie par le client
-
     $requete = $pdo->prepare("INSERT INTO `Poll` ( `idCourse` , `idPerson` , `status` , `question` , `answer` , `dateAnswer` , `etat` ) values ( :idCourse , :idPerson , 'Sent' , :question , null,null,null);");
 	$requete->bindParam(':idCourse', $_GET['idCourse'] );
 	$requete->bindParam(':idPerson',  $_GET['idPerson']);
