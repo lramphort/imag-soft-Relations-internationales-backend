@@ -21,7 +21,7 @@ Insert into Student values ('8', 'person008@gmail.com', 'Virginie', 'Lemaire', '
 Insert into Student values ('9', 'person009@gmail.com', 'Chloe', 'Lewom', '2003/01/22 01:00:00', '2003/01/22 01:00:00', '+33610000009', 'root8', 'root8', 'UGA', false, false);
 Insert into Student values ('10', 'person010@gmail.com', 'Martin', 'Man', '2003/01/22 01:00:00', '2003/01/22 01:00:00', '+33610000010', 'root9', 'root9', 'UGA', true, false);
 Insert into Student values ('11', 'person011@gmail.com', 'Xavier', 'Norti', '2003/01/22 01:00:00', '2003/01/22 01:00:00', '+33610000011', 'root10', 'root10', 'Jean-Moulin', true, true);
-Insert into Student values ('12', 'person012@gmail.com', 'Marie', 'Latour', '2003/01/22 01:00:00', '2003/01/22 01:00:00', '+33610000012', 'root11', 'root11', 'UPMF', true, false);
+Insert into Student values ('12', 'person012@gmail.com', 'Marie', 'Latour', '2003/01/22 01:00:00', null, '+33610000012', 'root11', 'root11', 'UPMF', true, false);
 
 Insert into Contact values ('1', '1', 'cont001@gmail.com', 'Lucie', 'Prevert', '0620000001', 'affiliation1', 'descriptionContact001');
 Insert into Contact values ('2', '1', 'cont001@gmail.com', 'Alain', 'Dante', '0620000002', 'affiliation2', 'descriptionContact002');
@@ -52,10 +52,10 @@ Insert into Mark values ('7', '3', '3','Partiel', 15);
 Insert into Mark values ('8', '3', '3','CC', 3);
 Insert into Mark values ('9', '3', '3','QCM', 12.5);
 
-Insert into Poll values ('1', '1', '1', 'Sent', 'Which color do you prefer ?', null, null,true);
-Insert into Poll values ('2', '2', '2','Answered', 'Are you intagrated ?', 'Pretty well', '2017/11/07 01:00:00',true);
-Insert into Poll values ('3', '3', '2','Sent', 'Do you need help for this chapter ?', null, null,true);
-Insert into Poll values ('4', '3', '2','Answered', 'Have you forgotten your headset ?', 'No', '2018/05/28 01:00:00',true);
+Insert into Poll values ('1', '1', '1', 'Sent', 'Which color do you prefer ?', null, null);
+Insert into Poll values ('2', '2', '2','Answered', 'Are you intagrated ?', 'Pretty well', '2017/11/07 01:00:00');
+Insert into Poll values ('3', '3', '2','Sent', 'Do you need help for this chapter ?', null, null);
+Insert into Poll values ('4', '3', '2','Answered', 'Have you forgotten your headset ?', 'No', '2018/05/28 01:00:00');
 
 Insert into PossibleAnswer values ('1', '1','Blue');
 Insert into PossibleAnswer values ('2', '1','Red');

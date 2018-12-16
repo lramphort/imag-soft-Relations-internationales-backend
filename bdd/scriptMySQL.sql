@@ -111,7 +111,6 @@ CREATE TABLE Poll(
   question varchar(255),
   answer varchar(255),
   dateAnswer DATETIME,
-  etat boolean,
   PRIMARY KEY (idPoll),
   FOREIGN KEY (idCourse) REFERENCES Course(idCourse)
 );

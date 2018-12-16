@@ -2,7 +2,6 @@
 include('../template.php');
 include('../genPW.php');
 
-
 if( !empty($_GET['firstName']) 
 && !empty($_GET['lastName']) 
 && !empty($_GET['birthDate']) 
@@ -13,19 +12,7 @@ if( !empty($_GET['firstName'])
 && !empty($_GET['login'])
 && !empty($_GET['passWord']) 
 ){
-	
-	echo $_GET['firstName']. " ";
-	echo $_GET['lastName']. " ";
-	echo $_GET['birthDate']. " ";
-	echo $_GET['emailAddress']. " ";
-	echo $_GET['phoneNumber']. " ";
-	echo $_GET['university']. " ";
-	echo $_GET['isEntrant']. " ";
-	echo $_GET['login']. " ";
-	echo $_GET['passWord']. " ";
-
 	$password = crypt($_GET['passWord'], '$5$rounds=5000$usesomesillystringforsalt$' );
-
 
     $requete = $pdo->prepare("INSERT INTO `Student` ( `firstName` , `lastName` , `emailAddress` , `birthDate` , `lastConnection` , `phoneNumber` , `university` , `isArchived` , `isEntrant` , `login` , `passWord`) values ( :firstName, :lastName, :emailAddress, :birthDate , null , :phoneNumber , :university , 0 , :isEntrant , :login , :passWord);");
 	$requete->bindParam(':firstName',  $_GET['firstName'] );
@@ -49,7 +36,7 @@ if( !empty($_GET['firstName'])
 	$msg = "Il manque des informations...";
 }
 
-//reponse_json($success, $data, $msg);
+reponse_json($success, $data, $msg);
 
 /*
 
