@@ -40,6 +40,8 @@ CREATE TABLE Student(
   university varchar(255),
   isArchived boolean,
   isEntrant boolean,
+  isLearningAgreementValid boolean,
+  dateLearningAgreementValid DATETIME,
   PRIMARY KEY (idPerson)
 );
 
@@ -120,7 +122,7 @@ CREATE TABLE PossibleAnswer(
   idPoll int NOT NULL,
   valuePossibleAnswer varchar(255),
   PRIMARY KEY (idPossibleAnswer),
-  FOREIGN KEY (idPoll) REFERENCES Poll(idPoll)
+  FOREIGN KEY (idPoll) REFERENCES Poll(idPoll) ON DELETE CASCADE
 );
 
 ## Commandes utilies

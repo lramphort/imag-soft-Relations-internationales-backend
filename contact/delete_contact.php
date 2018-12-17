@@ -2,7 +2,7 @@
 include('../template.php');
 
 if( !empty($_GET['idContact']) ){
-	$requete = $pdo->prepare("DELETE FROM `Contact` WHERE `idContact` LIKE :idContact;");
+	$requete = $pdo->prepare("DELETE FROM `Contact` WHERE `idContact` = :idContact;");
 	$requete->bindParam(':idContact', $_GET['idContact']);
 
 	if( $requete->execute() ){
