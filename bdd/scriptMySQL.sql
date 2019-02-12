@@ -38,9 +38,9 @@ CREATE TABLE Student(
   login varchar(255),
   passWord varchar(255),
   university varchar(255),
-  isArchived boolean,
-  isEntrant boolean,
-  isLearningAgreementValid boolean,
+  isArchived varchar(255),
+  isEntrant varchar(255),
+  isLearningAgreementValid varchar(255),
   dateLearningAgreementValid DATETIME,
   PRIMARY KEY (idPerson)
 );
