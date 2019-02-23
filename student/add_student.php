@@ -12,7 +12,7 @@ if( !empty($_GET['firstName'])
 && !empty($_GET['login'])
 && !empty($_GET['passWord']) 
 ){
-	$password = crypt($_GET['passWord'], '$5$rounds=5000$usesomesillystringforsalt$' );
+	// $password = crypt($_GET['passWord'], '$5$rounds=5000$usesomesillystringforsalt$' );
 
     $requete = $pdo->prepare("INSERT INTO `Student` ( `firstName` , `lastName` , `emailAddress` , `birthDate` , `lastConnection` , `phoneNumber` , `university` , `isArchived` , `isEntrant` , `login` , `passWord`) values ( :firstName, :lastName, :emailAddress, :birthDate , null , :phoneNumber , :university , 'false' , :isEntrant , :login , :passWord);");
 	$requete->bindParam(':firstName',  $_GET['firstName'] );
@@ -23,7 +23,7 @@ if( !empty($_GET['firstName'])
 	$requete->bindParam(':university', $_GET['university'] );
 	$requete->bindParam(':isEntrant', $_GET['isEntrant']);
 	$requete->bindParam(':login', $_GET['login'] );
-	$requete->bindParam(':passWord', $password );
+	$requete->bindParam(':passWord', $_GET['passWord'] );
 	
 	if( $requete->execute() ){
 		$requete2 = $pdo->prepare("SELECT * FROM `Student` WHERE `firstName` LIKE :firstName AND `lastName` LIKE :lastName AND `emailAddress` LIKE :emailAddress");
