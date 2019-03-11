@@ -4,7 +4,7 @@ include('../template.php');
 if( !empty($_GET['answer'])
 && !empty($_GET['idPoll']) 
 ){
-    $requete = $pdo->prepare("UPDATE `Poll` SET `answer` = :answer AND `dateAnswer` = NOW() AND `status` = `answered` WHERE `idPoll` = :idPoll;");
+    $requete = $pdo->prepare("UPDATE `Poll` SET `answer` = :answer, `dateAnswer` = NOW(), `status` = 'answered' WHERE `idPoll` = :idPoll;");
 	$requete->bindParam(':answer',  $_GET['answer'] );
 	$requete->bindParam(':idPoll',  $_GET['idPoll'] );
 	
