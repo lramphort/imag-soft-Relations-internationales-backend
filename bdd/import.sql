@@ -32,10 +32,10 @@ Insert into Contact values ('6', '4', 'cont001@gmail.com', 'Thomas', 'Huto', '06
 
 Insert into Administrator values ('5', 'person005@gmail.com', 'Alexandra', 'Duris', '2003/01/22 01:00:00', '2003/01/22 01:00:00', '+33610000005', 'admin', 'admin');
 
-Insert into DailyTopic values ('1', '1', '2003/01/22 01:00:00', 'descriptionDT001', 'I am well arrived !');
-Insert into DailyTopic values ('2', '2', '2003/01/22 01:00:00', 'descriptionDT002', 'Happy to integrate the football team');
-Insert into DailyTopic values ('3', '3', '2003/01/22 01:00:00', 'descriptionDT003', 'Canada is a nice country');
-Insert into DailyTopic values ('4', '4', '2003/01/22 01:00:00', 'descriptionDT004', 'Looking for a new smartphone ?');
+Insert into DailyTopic values ('1', '1', '2003/01/22 01:00:00', 'descriptionDT001', 'I am well arrived !', 'false');
+Insert into DailyTopic values ('2', '2', '2003/01/22 01:00:00', 'descriptionDT002', 'Happy to integrate the football team', 'false');
+Insert into DailyTopic values ('3', '3', '2003/01/22 01:00:00', 'descriptionDT003', 'Canada is a nice country', 'true');
+Insert into DailyTopic values ('4', '4', '2003/01/22 01:00:00', 'descriptionDT004', 'Looking for a new smartphone ?', 'false');
 
 Insert into Course values ('1', '1','descriptionCourse001',  'English', 3, 'last commentary 1', 'Pierre Lachaise', 'pierrot@gmail.com');
 Insert into Course values ('2', '2','descriptionCourse002',  'Mathematics', 3, 'last commentary 2', 'Benjamin Prejent', 'benjaminprejent@gmail.com');

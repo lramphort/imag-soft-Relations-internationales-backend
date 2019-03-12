@@ -77,6 +77,7 @@ CREATE TABLE DailyTopic(
   dateDailyTopic date,
   description varchar(255),
   name varchar(255),
+  hasBeenSeen varchar(255),
   PRIMARY KEY (idDailyTopic),
   FOREIGN KEY (idPerson) REFERENCES Student(idPerson)
 );
