@@ -8,11 +8,10 @@ if( !empty($_GET['firstName'])
 && !empty($_GET['emailAddress']) 
 && !empty($_GET['phoneNumber']) 
 && !empty($_GET['university']) 
-&& !empty($_GET['isEntrant']) 
-&& !empty($_GET['login'])
-&& !empty($_GET['passWord']) 
+&& !empty($_GET['isEntrant'])
 ){
-	// $password = crypt($_GET['passWord'], '$5$rounds=5000$usesomesillystringforsalt$' );
+	$password = $_GET['firstName'] . $_GET['lastName'];
+	$login = $_GET['firstName'] . $_GET['lastName'];
 
     $requete = $pdo->prepare("INSERT INTO `Student` ( `firstName` , `lastName` , `emailAddress` , `birthDate` , `lastConnection` , `phoneNumber` , `university` , `isArchived` , `isEntrant` , `login` , `passWord`) values ( :firstName, :lastName, :emailAddress, :birthDate , null , :phoneNumber , :university , 'false' , :isEntrant , :login , :passWord);");
 	$requete->bindParam(':firstName',  $_GET['firstName'] );
@@ -22,8 +21,8 @@ if( !empty($_GET['firstName'])
 	$requete->bindParam(':phoneNumber', $_GET['phoneNumber'] );
 	$requete->bindParam(':university', $_GET['university'] );
 	$requete->bindParam(':isEntrant', $_GET['isEntrant']);
-	$requete->bindParam(':login', $_GET['login'] );
-	$requete->bindParam(':passWord', $_GET['passWord'] );
+	$requete->bindParam(':login', $login );
+	$requete->bindParam(':passWord', $password );
 	
 	if( $requete->execute() ){
 		$requete2 = $pdo->prepare("SELECT * FROM `Student` WHERE `firstName` LIKE :firstName AND `lastName` LIKE :lastName AND `emailAddress` LIKE :emailAddress");

@@ -77,11 +77,8 @@ CREATE TABLE DailyTopic(
   dateDailyTopic date,
   description varchar(255),
   name varchar(255),
-<<<<<<< HEAD
   type varchar(255),
-=======
   hasBeenSeen varchar(255),
->>>>>>> cc3941c215e87e3c9440e594a538bbf0972bbef3
   PRIMARY KEY (idDailyTopic),
   FOREIGN KEY (idPerson) REFERENCES Student(idPerson)
 );
@@ -97,6 +94,8 @@ CREATE TABLE Course(
   teacherEmail varchar(255),
   codeUE varchar(255),
   semester varchar(255),
+  state varchar(255),
+  lastModification DATETIME,
   PRIMARY KEY (idCourse),
   FOREIGN KEY (idPerson) REFERENCES Student(idPerson)
 );

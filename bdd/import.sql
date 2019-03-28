@@ -37,10 +37,10 @@ Insert into DailyTopic values ('2', '2', '2003/01/22 01:00:00', 'descriptionDT00
 Insert into DailyTopic values ('3', '3', '2003/01/22 01:00:00', 'descriptionDT003', 'Canada is a nice country','course');
 Insert into DailyTopic values ('4', '4', '2003/01/22 01:00:00', 'descriptionDT004', 'Looking for a new smartphone ?','life');
 
-Insert into Course values ('1', '1','descriptionCourse001',  'English', 3, 'last commentary 1', 'Pierre Lachaise', 'pierrot@gmail.com','UE34','test');
-Insert into Course values ('2', '2','descriptionCourse002',  'Mathematics', 3, 'last commentary 2', 'Benjamin Prejent', 'benjaminprejent@gmail.com','UE34','test');
-Insert into Course values ('3', '2','descriptionCourse003',  'Biology', 3, 'last commentary 3', 'Laurie Lachanteuse', 'surunairlatino@gmail.com','UE34','test');
-Insert into Course values ('4', '3','descriptionCourse004',  'Algorithms', 3, 'last commentary 4', 'Paul Ochon', 'mdr@gmail.com','UE34','test');
+Insert into Course values ('1', '1','descriptionCourse001',  'English', 3, 'last commentary 1', 'Pierre Lachaise', 'pierrot@gmail.com','UE34','test', 'pending', '2003/01/22 01:00:00');
+Insert into Course values ('2', '2','descriptionCourse002',  'Mathematics', 3, 'last commentary 2', 'Benjamin Prejent', 'benjaminprejent@gmail.com','UE34','test', 'pending', '2003/01/22 01:00:00');
+Insert into Course values ('3', '2','descriptionCourse003',  'Biology', 3, 'last commentary 3', 'Laurie Lachanteuse', 'surunairlatino@gmail.com','UE34','test', 'pending', '2003/01/22 01:00:00');
+Insert into Course values ('4', '3','descriptionCourse004',  'Algorithms', 3, 'last commentary 4', 'Paul Ochon', 'mdr@gmail.com','UE34','test', 'pending', '2003/01/22 01:00:00');
 
 Insert into Mark values ('1', '1', '1','QCM', 8.5);
 Insert into Mark values ('2', '1', '1','CC', 15);

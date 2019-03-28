@@ -10,8 +10,17 @@ if( !empty($_GET['isLearningAgreementValid'])
     $requete = $pdo->prepare("UPDATE `Student` SET `isLearningAgreementValid` = :isLearningAgreementValid, `dateLearningAgreementValid` = NOW() WHERE `idPerson` = :idPerson;");
 	$requete->bindParam(':isLearningAgreementValid',  $_GET['isLearningAgreementValid'] );
 	$requete->bindParam(':idPerson',  $_GET['idPerson'] );
+
+    $requete2 = $pdo->prepare("UPDATE `Course` SET `state` = :state WHERE `state` = 'pending', `lastModification` = NOW();");
+	$requete2->bindParam(':idPerson',  $_GET['idPerson'] );
+
+	if ($_GET['isLearningAgreementValid'] === 'true') {
+		$requete2->bindParam(':state', 'valid' );
+	} else {
+		$requete2->bindParam(':state', 'rejected' );
+	}
 	
-	if( $requete->execute() ){
+	if( $requete->execute() && $requete2->execute() ){
 		$success = true;
 		$msg = 'Un(e) étudiant(e) a bien été modifié(e)';
 	} else {

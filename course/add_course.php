@@ -9,7 +9,7 @@ if(!empty($_GET['idPerson'])
 && !empty($_GET['teacherFullName'])
 && !empty($_GET['teacherEmail'])
  ){
-    $requete = $pdo->prepare("INSERT INTO `Course` ( `idPerson` , `description` , `name` , `ects` , `lastCommentary` , `teacherFullName` , `teacherEmail` ) values ( :idPerson , :description , :name , :ects , :lastCommentary , :teacherFullName , :teacherEmail );");
+    $requete = $pdo->prepare("INSERT INTO `Course` ( `idPerson` , `description` , `name` , `ects` , `lastCommentary` , `teacherFullName` , `teacherEmail`, `lastModification` ) values ( :idPerson , :description , :name , :ects , :lastCommentary , :teacherFullName , :teacherEmail, NOW() );");
 	$requete->bindParam(':idPerson', $_GET['idPerson'] );
 	$requete->bindParam(':description',  $_GET['description']);
 	$requete->bindParam(':name',  $_GET['name']);
