@@ -77,6 +77,7 @@ CREATE TABLE DailyTopic(
   dateDailyTopic date,
   description varchar(255),
   name varchar(255),
+  type varchar(255),
   PRIMARY KEY (idDailyTopic),
   FOREIGN KEY (idPerson) REFERENCES Student(idPerson)
 );
@@ -90,6 +91,8 @@ CREATE TABLE Course(
   lastCommentary varchar(255),
   teacherFullName varchar(255),
   teacherEmail varchar(255),
+  codeUE varchar(255),
+  semester varchar(255),
   PRIMARY KEY (idCourse),
   FOREIGN KEY (idPerson) REFERENCES Student(idPerson)
 );
@@ -114,7 +117,8 @@ CREATE TABLE Poll(
   answer varchar(255),
   dateAnswer DATETIME,
   PRIMARY KEY (idPoll),
-  FOREIGN KEY (idCourse) REFERENCES Course(idCourse)
+  FOREIGN KEY (idCourse) REFERENCES Course(idCourse),
+  FOREIGN KEY (idPerson) REFERENCES Student(idPerson)
 );
 
 CREATE TABLE PossibleAnswer(
