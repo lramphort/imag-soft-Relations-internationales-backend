@@ -13,7 +13,7 @@ if( !empty($_GET['firstName'])
 	$password = $_GET['firstName'] . $_GET['lastName'];
 	$login = $_GET['firstName'] . $_GET['lastName'];
 
-    $requete = $pdo->prepare("INSERT INTO `Student` ( `firstName` , `lastName` , `emailAddress` , `birthDate` , `lastConnection` , `phoneNumber` , `university` , `isArchived` , `isEntrant` , `login` , `passWord`) values ( :firstName, :lastName, :emailAddress, :birthDate , null , :phoneNumber , :university , 'false' , :isEntrant , :login , :passWord);");
+    $requete = $pdo->prepare("INSERT INTO `Student` ( `firstName` , `lastName` , `emailAddress` , `birthDate` , `lastConnection` , `phoneNumber` , `university` , `isArchived` , `isEntrant` , `login` , `passWord`, `isLearningAgreementValid`, `dateLearningAgreementValid`) values ( :firstName, :lastName, :emailAddress, :birthDate , null , :phoneNumber , :university , 'false' , :isEntrant , :login , :passWord, 'false', NOW());");
 	$requete->bindParam(':firstName',  $_GET['firstName'] );
 	$requete->bindParam(':lastName', $_GET['lastName'] );
 	$requete->bindParam(':emailAddress', $_GET['emailAddress'] );

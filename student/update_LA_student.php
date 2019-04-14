@@ -2,25 +2,23 @@
 include('../template.php');
 
 if( !empty($_GET['isLearningAgreementValid'])
-&& !empty($_GET['idPerson']) 
+&& !empty($_GET['idPerson'])
 ){
-	echo $_GET['isLearningAgreementValid'];
-	echo $_GET['idPerson'];
-
     $requete = $pdo->prepare("UPDATE `Student` SET `isLearningAgreementValid` = :isLearningAgreementValid, `dateLearningAgreementValid` = NOW() WHERE `idPerson` = :idPerson;");
 	$requete->bindParam(':isLearningAgreementValid',  $_GET['isLearningAgreementValid'] );
 	$requete->bindParam(':idPerson',  $_GET['idPerson'] );
 
-    $requete2 = $pdo->prepare("UPDATE `Course` SET `state` = :state, `lastModification` = NOW() WHERE `state` = 'pending' AND `idPerson` = :idPerson;");
-	$requete2->bindParam(':idPerson',  $_GET['idPerson'] );
-
 	if ($_GET['isLearningAgreementValid'] === 'true') {
-		$requete2->bindParam(':state', 'valid');
+    	$requeteCoursesState = $pdo->prepare("UPDATE `Course` SET `state` = 'accepted', `lastModification` = NOW() WHERE `state` = 'pending' AND `idPerson` = :idPerson;");
+		$requeteCoursesState->bindParam(':idPerson',  $_GET['idPerson'] );
+		$requeteCoursesState->execute();
 	} else {
-		$requete2->bindParam(':state', 'rejected');
+    	$requeteCoursesState = $pdo->prepare("UPDATE `Course` SET `state` = 'pending', `lastModification` = NOW() WHERE `state` = 'accepted' AND `idPerson` = :idPerson;");
+		$requeteCoursesState->bindParam(':idPerson',  $_GET['idPerson'] );
+		$requeteCoursesState->execute();
 	}
 	
-	if( $requete->execute() && $requete2->execute() ){
+	if ($requete->execute()) {
 		$success = true;
 		$msg = 'Un(e) étudiant(e) a bien été modifié(e)';
 	} else {

@@ -11,7 +11,7 @@ Insert into Person values ('10', 'person010@gmail.com', 'Martin', 'Man', '2003/0
 Insert into Person values ('11', 'person011@gmail.com', 'Xavier', 'Norti', '2003/01/22 01:00:00', '2003/01/22 01:00:00', '+33610000011', 'root');
 Insert into Person values ('12', 'person012@gmail.com', 'Marie', 'Latour', '2003/01/22 01:00:00', '2003/01/22 01:00:00', '+33610000012', 'root');*/
 
-Insert into Student values ('1', 'person001@gmail.com', 'Jeanne', 'Dupont', '2003/01/22 01:00:00', '2003/01/22 01:00:00', '+33487256897', 'root1', 'root1', 'UGA', 'false', 'false', 'true', NOW());
+Insert into Student values ('1', 'person001@gmail.com', 'Jeanne', 'Dupont', '2003/01/22 01:00:00', '2003/01/22 01:00:00', '+33487256897', 'root1', 'root1', 'UGA', 'false', 'false', 'false', NOW());
 Insert into Student values ('2', 'person002@gmail.com', 'Alice', 'Clerc', '2003/01/22 01:00:00', '2003/01/22 01:00:00', '+33487256897', 'root2', 'root2', 'UGA', 'false', 'false', 'false', null);
 Insert into Student values ('3', 'person003@gmail.com', 'Benoit', 'Dumas', '2003/01/22 01:00:00', '2003/01/22 01:00:00', '+33487256897', 'root3','root3', 'UGA', 'false', 'true', 'false', null);
 Insert into Student values ('4', 'person004@gmail.com', 'Marie', 'Lambert', '2003/01/22 01:00:00', '2003/01/22 01:00:00', '+33610000004', 'root4','root4', 'UPMF', 'false', 'false', 'false', null);

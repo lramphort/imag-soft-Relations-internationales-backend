@@ -8,8 +8,9 @@ if(!empty($_GET['idPerson'])
 && !empty($_GET['lastCommentary'])
 && !empty($_GET['teacherFullName'])
 && !empty($_GET['teacherEmail'])
+&& !empty($_GET['semester'])
  ){
-    $requete = $pdo->prepare("INSERT INTO `Course` ( `idPerson` , `description` , `name` , `ects` , `lastCommentary` , `teacherFullName` , `teacherEmail`, `state`, `lastModification` ) values ( :idPerson , :description , :name , :ects , :lastCommentary , :teacherFullName , :teacherEmail, 'pending', NOW() );");
+    $requete = $pdo->prepare("INSERT INTO `Course` ( `idPerson` , `description` , `name` , `ects` , `lastCommentary` , `teacherFullName` , `teacherEmail`, `state`, `lastModification`, `semester` ) values ( :idPerson , :description , :name , :ects , :lastCommentary , :teacherFullName , :teacherEmail, 'pending', NOW(), :semester );");
 	$requete->bindParam(':idPerson', $_GET['idPerson'] );
 	$requete->bindParam(':description',  $_GET['description']);
 	$requete->bindParam(':name',  $_GET['name']);
@@ -17,6 +18,7 @@ if(!empty($_GET['idPerson'])
 	$requete->bindParam(':lastCommentary',  $_GET['lastCommentary']);
 	$requete->bindParam(':teacherFullName',  $_GET['teacherFullName']);
 	$requete->bindParam(':teacherEmail',  $_GET['teacherEmail']);
+	$requete->bindParam(':semester',  $_GET['semester']);
    
 	if( $requete->execute() ){
 		$success = true;
