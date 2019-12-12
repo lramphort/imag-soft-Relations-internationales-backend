@@ -38,7 +38,7 @@ if( !empty($_GET['firstName'])
 	$requete->bindParam(':university', $_GET['university'] );
 	$requete->bindParam(':isEntrant', $_GET['isEntrant']);
 	$requete->bindParam(':login', $login );
-	$requete->bindParam(':passWord', $password );
+	$requete->bindParam(':passWord', hash('sha256', $password) );
 
 	if( $requete->execute() ){
 		$requete2 = $pdo->prepare("SELECT * FROM `Student` WHERE `firstName` LIKE :firstName AND `lastName` LIKE :lastName AND `emailAddress` LIKE :emailAddress");
@@ -58,7 +58,7 @@ if( !empty($_GET['firstName'])
     $to_name = $_GET['firstName'] .' '. $_GET['lastName']; //Nom du destinataire
     $to_address = $_GET['emailAddress']; //Adresse du destinataire
     $charset = "UTF-8"; //Utiliser le m▒me encodage que la BDD, pour conserver les accents
-    $subject = "Sujet du mail"; //Sujet du mail
+    $subject = "Relations internationales"; //Sujet du mail
     $message = "
 		Welcome ".$_GET['firstName'] ." ". $_GET['lastName'].", \n
 		you can connect to this following address : http://im2ag-relations-internationales.univ-grenoble-alpes.fr/ with the credentials :\n
