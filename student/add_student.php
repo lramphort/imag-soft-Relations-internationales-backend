@@ -22,7 +22,7 @@ if( !empty($_GET['firstName'])
 && !empty($_GET['university'])
 && !empty($_GET['isEntrant'])
 ){
-	$password = hash('sha256',generateRandomString());
+	$password = generateRandomString();
 	$login = $_GET['firstName'] . $_GET['lastName'];
 
 	/*
