@@ -59,11 +59,30 @@ if( !empty($_GET['firstName'])
     $to_address = $_GET['emailAddress']; //Adresse du destinataire
     $charset = "UTF-8"; //Utiliser le m▒me encodage que la BDD, pour conserver les accents
     $subject = "Relations internationales"; //Sujet du mail
-    $message = "
-		Welcome ".$_GET['firstName'] ." ". $_GET['lastName'].", \n
-		you can connect to this following address : http://im2ag-relations-internationales.univ-grenoble-alpes.fr/ with the credentials :\n
-		username: ".$_GET['firstName'] . $_GET['lastName']." \n
-		password: ".$password; //Corps du mail \n pour saut de ligne, mail en format texte, il faut s▒rement modifier les fonctions plus bas pour accepter du HTML (setTxtBody ?)
+    $message =
+"    ***English version below***". " \n
+
+Bonjour,". " \n
+Nous avons le plaisir de vous informer que votre profil a été enregistré sur notre application des relations internationales de l’IM²AG.". " \n
+". " \n
+Pour accéder à ce service en ligne, cliquez sur le lien suivant :". " \n
+Adresse  http://im2ag-relations-internationales.univ-grenoble-alpes.fr/". " \n
+Identifiant : ".$_GET['firstName'] . $_GET['lastName']. " \n
+Mot de passe : ".$password. " \n
+". " \n
+Cordialement,". " \n
+". " \n
+*********************************************************************". " \n
+Dear student,". " \n
+". " \n
+We are glad to inform you that your profil has been saved on our IM²AG International relations application.". " \n
+". " \n
+In order to proceed with your registration, please follow the link below :". " \n
+Address : http://im2ag-relations-internationales.univ-grenoble-alpes.fr/". " \n
+Username : ".$_GET['firstName'] . $_GET['lastName']. " \n
+Password : ".$password. " \n
+". " \n
+Best Regards";
 
     //D▒finition des param▒tres sortants (pas besoin d'authentification sur le SMTP de l'UGA si on est depuis un hote autoris▒)
     $host = "mailhost.u-ga.fr";
