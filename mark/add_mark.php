@@ -6,7 +6,7 @@ if(!empty($_GET['idPerson'])
 && !empty($_GET['typeMark'])
 && !empty($_GET['valueMark'])
  ){
-    $requete = $pdo->prepare("INSERT INTO `Course` ( `idPerson` , `idCourse` , `typeMark` , `valueMark` ) values ( :idPerson , :idCourse , :typeMark , :valueMark );");
+    $requete = $pdo->prepare("INSERT INTO `Mark` ( `idPerson` , `idCourse` , `typeMark` , `valueMark` ) values ( :idPerson , :idCourse , :typeMark , :valueMark );");
 	$requete->bindParam(':idPerson', $_GET['idPerson'] );
 	$requete->bindParam(':idCourse',  $_GET['idCourse']);
 	$requete->bindParam(':typeMark',  $_GET['typeMark']);
