@@ -20,6 +20,8 @@ if( !empty($_GET['firstName'])
   $requete->bindParam(':idPerson',  $_GET['idPerson'] );
 
   if ($requete->execute()) {
+    $resultats = $requete->fetchAll();
+  	$data['Student'] = $resultats;
 		$success = true;
 		$msg = 'Un(e) étudiant(e) a bien été modifié(e)';
 	} else {
