@@ -8,8 +8,7 @@ if( !empty($_GET['firstName'])
 && !empty($_GET['phoneNumber'])
 && !empty($_GET['university'])
 && !empty($_GET['isEntrant'])
-&& !empty($_GET['idPerson']) )
-){
+&& !empty($_GET['idPerson']) ) {
   $requete = $pdo->prepare("UPDATE `Student` SET `firstName` = :firstName , `lastName` = :lastName, `emailAddress` = :emailAddress, `birthDate` = :birthDate , `phoneNumber` = :phoneNumber , `university` = :university , `isEntrant` = :isEntrant WHERE `idPerson` = :idPerson;");
 	$requete->bindParam(':firstName',  $_GET['firstName'] );
 	$requete->bindParam(':lastName', $_GET['lastName'] );
